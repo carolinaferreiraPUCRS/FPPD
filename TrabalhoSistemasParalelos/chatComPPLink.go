@@ -45,18 +45,23 @@ func main() {
 
 		todosPrimos := [len(sizes)][nrPrimos]int{primos3, primos6, primos9, primos13, primos16, primos18}
 
+		// Skip first address, which is this process address
+		addresses = os.Args[2:]
 		for p := 0; p < len(sizes); p++ {
-			messageBeginning := fmt.Sprintf("Enviando %d valores para %s. Magnitude = %d", nrPrimos, addresses[1], sizes[p])
+			addressesCount := len(addresses)
+			nextProcess := addresses[p % addressesCount]
+
+			messageBeginning := fmt.Sprintf("Enviando %d valores para %s. Magnitude = %d", nrPrimos, nextProcess, sizes[p])
 			numbersStr := fmt.Sprint(todosPrimos[p])
 			numbersFieldsArray := strings.Fields(numbersStr)
 			numbersStr = strings.Join(numbersFieldsArray, ",")
 			numbersStr = strings.Trim(numbersStr, "[]")
 			message := messageBeginning + " || " + numbersStr
+
 			fmt.Println("Snd: ", message)
 			req := PP2PLink.PP2PLink_Req_Message{
-				To:      addresses[1],
+				To:      nextProcess,
 				Message: message}
-
 			lk.Req <- req
 		}
 	}()

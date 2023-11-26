@@ -90,6 +90,8 @@ func main() {
 		// Calcular primalidade
 		primeCount, duration := contaPrimosConc(primes)
 		response := fmt.Sprintf("Magnitude, duration, primeCount = %s || %s || %d", magnitude, duration, primeCount)
+
+		fmt.Println("Snd: ", response)
 		go sendResponse(response, addresses[1], lk)
 	}
 }
