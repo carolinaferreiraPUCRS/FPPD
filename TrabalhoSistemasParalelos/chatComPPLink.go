@@ -20,9 +20,9 @@ import (
 func main() {
 
 	if len(os.Args) < 2 {
-		fmt.Println("Usage:   go run pp2plTest.go thisProcessIpAddress:port otherProcessIpAddress:port")
-		fmt.Println("Example: go run pp2plTest.go  127.0.0.1:8050    127.0.0.1:8051")
-		fmt.Println("Example: go run pp2plTest.go  127.0.0.1:8051    127.0.0.1:8050")
+		fmt.Println("Usage:   go run chatComPP2Link.go thisProcessIpAddress:port otherProcessIpAddress:port")
+		fmt.Println("Example: go run chatComPP2Link.go 127.0.0.1:8050 127.0.0.1:8051")
+		fmt.Println("Example: go run chatComPP2Link.go 127.0.0.1:8051 127.0.0.1:8050")
 		return
 	}
 
@@ -37,10 +37,7 @@ func main() {
 			fmt.Println("                                            Rcv: ", m)
 		}
 	}()
-	// primeiro a enviar
-	// envia array de int (primos)
-	// recebe despesas gerais (float?)
-	// printa tempo
+
 	go func() {
 		for {
 			fmt.Print("Snd: ")
