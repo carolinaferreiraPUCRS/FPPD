@@ -1,0 +1,5 @@
+# Exercício Avaliativo
+-   <Strong>Caso: </Strong> Pipe-Sort (5)
+-   <Strong>Enunciado: </Strong>Suponha que um processo gera N valores aleatórios e passa estes valores para um pool de N processos pré-criados. A função do pool de processos é ordenar os valores.
+Uma solução possível é: – forme uma topologia conectando os N processos em linha. Cada processo recebe de um canal de entrada e escreve em um canal de saída. – cada processo mantém um valor – cada vez que o processo recebe um valor na entrada, ele armazena o valor se for o primeiro recebidocompara com o valor armazenado, passa o mais alto, mantém o outro armazenado – assim, todos valores aa direita do processo serão maiores que o que ele mantém. Ao final da inserção de N valores no pool, eles estão ordenados conforme a ordem dos processos do pool.
+-   <Strong>Objetivo: </Strong> Encenar e mostrar claramente a disposição de processos (colegas) e canais (mesas?) – encenar de forma a mostrar o comportamento paralelo dos processos

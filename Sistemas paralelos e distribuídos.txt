@@ -1,0 +1,9 @@
+Sistemas paralelos e distribuídos
+
+-> sistema é distribuído quando roda em cpu e memória e desacoplados
+
+-> concorrência é essencialmente coexistência entre sistemas (não necessariamente implica competição). É uma coexistência voltada para uma solução.
+
+-> Thread é uma linha de execução (sequência de instruções, processos)
+
+
